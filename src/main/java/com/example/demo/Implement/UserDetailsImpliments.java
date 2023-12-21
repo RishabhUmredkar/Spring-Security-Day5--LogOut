@@ -1,8 +1,10 @@
 package com.example.demo.Implement;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.Model.User;
@@ -19,7 +21,7 @@ public class UserDetailsImpliments implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return Collections.singleton(new SimpleGrantedAuthority("USER"));
 	}
 
 	@Override
